@@ -2,12 +2,6 @@ import { useState } from "react"
 
 export const DropDown = () => {
     
-    const colors = [
-        {color: "blue"},
-        {color: "red"},
-        {color: "yellow"},
-    ]
-
     const countries = [
         {country: "Malaysia"},
         {country: "Indonesia"},
