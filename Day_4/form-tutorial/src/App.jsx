@@ -12,25 +12,35 @@ function App() {
 
   useEffect(() => {console.log(details)}, [details])
 
+  const handleSignup = (values) => {
+    alert(JSON.stringify(values, null, 2));
+    setDetails({
+        fname: values.firstName,
+        lname: values.lastName,
+        email: values.email,
+        password: values.password,
+    });
+    setSignup("none")
+    setLogin("block")
+  }
+
+  const handleLogin = (values) => {
+    alert(JSON.stringify(values, null, 2));
+    console.log(values)
+    setLogin("none")
+    setWelcome("block")
+  }
+
   return (
     <div className="App">
-      <SignUpForm display={signup} onSubmit = {(values) => {
-                                alert(JSON.stringify(values, null, 2));
-                                setDetails({
-                                    fname: values.firstName,
-                                    lname: values.lastName,
-                                    email: values.email,
-                                    password: values.password,
-                                });
-                                setSignup("none")
-                                setLogin("block")
-      }}/>
-      <LoginForm display={login} onSubmit = {(values) => {
-                                alert(JSON.stringify(values, null, 2));
-                                console.log(values)
-                                setLogin("none")
-                                setWelcome("block")
-      }}/>
+      <SignUpForm 
+        display={signup}
+        onSubmit = {(values) => handleSignup(values)}/>
+
+      <LoginForm
+        display={login}
+        onSubmit = {(values) => handleLogin(values)}/>
+        
       <h1 style={{display: welcome}}>Welcome Aboard!</h1>
     </div>
   )
