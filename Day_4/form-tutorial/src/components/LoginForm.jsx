@@ -3,10 +3,16 @@ import React from 'react'
 import * as yup from "yup";
 import { CustomButton } from './CustomButton';
 import { FormContent } from './FormContent';
+import Button from '@mui/material/Button';
 
-export const LoginForm = ({display, ...restProps}) => {
+export const LoginForm = ({display, method, ...restProps}) => {
     return (
-        <div style={{display: display}} className="form-container">
+        <div style={{
+            display: display,
+            padding: "80px",
+            boxShadow: "10px 10px 5px #aaaaaa",
+            borderRadius: "20px",
+        }} className="form-container">
             <h1>Login</h1>
             <Formik
                 initialValues= {{
@@ -15,14 +21,6 @@ export const LoginForm = ({display, ...restProps}) => {
                 }}
             
                 validationSchema= {yup.object({
-                    firstName: yup
-                        .string()
-                        .max(15, "Must be less than 15 character."),
-                        // .required("Required"),
-                    lastName: yup
-                        .string()
-                        .max(20, "Must be less than 20 character."),
-                        // .required("Required"),
                     email: yup
                         .string()
                         .email("Invalid email")
@@ -35,10 +33,11 @@ export const LoginForm = ({display, ...restProps}) => {
                 {...restProps}
             >
                 {(formik)=>(
-                        <Form>
+                    <Form>
                             <FormContent name="email" type="email" placeholder="Email" />
                             <FormContent name="password" type="password" placeholder="Password" />
-                            <CustomButton type="submit">Login</CustomButton>
+                            {/* <CustomButton type="submit">Login</CustomButton> */}
+                            <Button type="submit" variant="contained">Login</Button>
                         </Form>
                 )}
             </Formik>

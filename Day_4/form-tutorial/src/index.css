@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App{
@@ -14,7 +15,7 @@
 }
 
 .form-container{
-  width: 40%;
+  width: 30%;
 }
 
 Form{
@@ -26,4 +27,9 @@ Form{
 .input-container{
   display: flex;
   flex-direction: column;
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 20px;
 }
