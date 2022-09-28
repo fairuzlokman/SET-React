@@ -15,7 +15,7 @@ export const Layout = () => {
           position: "absolute",
           top: "70px"
         }} />
-          <Outlet />
+        <Outlet />
         <Navigation />
     </div>
   )

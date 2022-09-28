@@ -54,8 +54,14 @@ const How = () => {
 
 const NoMatch = () => {
   return (
-    <div>
-      <h1>404 error</h1>
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh',
+      fontSize: '80px'
+    }}>
+      <h1>Page Not Found</h1>
     </div>
   )
 }

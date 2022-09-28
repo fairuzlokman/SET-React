@@ -9,11 +9,13 @@ export const Navigation = () => {
     })
 
     return (
-        <div className="navList">
-            <NavLink style={style} to={'/about'}>About</NavLink>
-            <NavLink style={style} to={'/advert'}>Advertising</NavLink>
-            <NavLink style={style} to={'/business'}>Business</NavLink>
-            <NavLink style={style} to={'/how'}>How Search works</NavLink>
+        <div className='navBox'>
+            <div className="navList">
+                <NavLink style={style} to={'/about'}>About</NavLink>
+                <NavLink style={style} to={'/advert'}>Advertising</NavLink>
+                <NavLink style={style} to={'/business'}>Business</NavLink>
+                <NavLink style={style} to={'/how'}>How Search works</NavLink>
+            </div>
         </div>
     )
 }

@@ -10,8 +10,8 @@ export const Home = () => {
             }}>Google</p>
         </div>
         <div id="searchBar">
-            <span class="material-symbols-outlined">search</span>
-            <input id="searchInput" type="text"  />
+            <span style={{backgroundColor: "transparent", color: "#8c9297"}} class="material-symbols-outlined">search</span>
+            <input id="searchInput" type="text" placeholder="Search Google or type a URL" />
         </div>
         <Navigation />
       </div>
