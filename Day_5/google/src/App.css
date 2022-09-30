@@ -1,41 +1,72 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Homepage */
+.Homepage{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#Google{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+#searchBar{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-radius: 60px;
+  border: 1px solid #8c9297;
+  padding-left: 15px;
+}
+#searchBar:hover{
+  border: none;
+  box-shadow: 0 3px 10px #aaaaaa;
+}
+#searchInput{
+  all: unset;
+  width: 95%;
+  font-size: 18px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
+/* Layout */
+.Pages{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.TopBar{
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  border-bottom: 1px solid black;
+  font-size: 30px;
+  box-shadow: 0 3px 10px #aaaaaa;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.navList{
+  height: 80px;
+  width: 100%;
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  align-items: center;
+  background-color: #181818;
+  color: #8c9297;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Content{
+  font-size: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+CustomButton:hover{
+  background-color: grey;
 }
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
