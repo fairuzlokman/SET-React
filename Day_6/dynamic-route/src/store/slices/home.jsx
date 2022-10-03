@@ -12,6 +12,10 @@ const homeReducer = (state=INITIAL_STATE, action) => {
                 ...state,
                 ...payload
             }
+        case 'RESET_HOME_STATE':
+            return {
+                INITIAL_STATE
+            }
         default:
             return state;
     }
