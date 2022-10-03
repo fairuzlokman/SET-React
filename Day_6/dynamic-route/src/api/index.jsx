@@ -1,5 +1,16 @@
 import axios from "axios";
 
+axios.interceptors.request.use(
+    async (config) => {
+        config.headers['Accept'] = 'application/json';
+        config.headers['Content-Type'] = 'application/json';
+        return config
+    },
+    (error) => {
+        Promise.reject(error)
+    }
+);
+
 export const get = async (endpoint, body, options) => {
     try {
         const response = await axios.get(
@@ -7,7 +18,7 @@ export const get = async (endpoint, body, options) => {
         body,
         options
         );
-        return response;
+        return { data: response.data, status: response.status};
     }
     catch (e) {
         console.log(e);
