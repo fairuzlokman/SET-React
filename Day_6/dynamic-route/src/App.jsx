@@ -9,6 +9,7 @@ import Users from './views/Users';
 import Admins from './views/Admins';
 import NoMatch from './views/NoMatch';
 import { useSelector } from 'react-redux';
+import Universities from './views/Universities';
 
 function App() {
   const { user } = useAuth();
@@ -26,6 +27,7 @@ function App() {
         {/* protection lvl 1 */}
         <Route path={'users'} element={<ProtectedRoute><Users/></ProtectedRoute>}/>
         <Route path={'users/:id'} element={<ProtectedRoute><User/></ProtectedRoute>}/>
+        <Route path={'universities'} element={<ProtectedRoute><Universities/></ProtectedRoute>}/>
 
         {/* protection lvl 2 */}
         <Route path={'admins'} element={<ProtectedRoute isAllowed={user?.roles.includes('admin')} redirectPath={'/users'}><Admins/></ProtectedRoute>}/>

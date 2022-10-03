@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
@@ -5,11 +6,8 @@ const Users = () => {
 
   const { token } = useAuth();
 
-  const users = [
-    { id: 1, fullName: 'Vincent' },
-    { id: 2, fullName: 'Hanafi' },
-    { id: 3, fullName: 'Rafi' },
-  ];
+  const { users } = useSelector(state => state.user) 
+
   return (
     <>
       <h2>This is the users page (protected)</h2>

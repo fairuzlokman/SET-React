@@ -9,13 +9,13 @@ const Home = () => {
 
   const dispatch = useDispatch();
   const setTitleAndDescption = (title, description) => dispatch({ type: 'SET_HOME_STATE' , payload: {title: title, description: description} })
-  const resetTitleAndDescption = () => dispatch({ type: 'RESET_HOME_STATE' })
+  // const resetTitleAndDescption = () => dispatch({ type: 'RESET_HOME_STATE' })
 
   useEffect(() => {
     setTitleAndDescption('HOME PAGE' , 'This is the home page');
-    setTimeout(() => {
-      resetTitleAndDescption();
-    }, 3000)
+    // setTimeout(() => {
+    //   resetTitleAndDescption();
+    // }, 3000)
   }, [])
 
   return (

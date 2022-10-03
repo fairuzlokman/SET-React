@@ -1,4 +1,13 @@
 const INITIAL_STATE = {
+    users: [
+        {
+            fullName: 'Fairuz',
+            email: 'fairuz@mail.com'
+        }
+    ],
+
+    universities: [],
+    
     name: '',
     email: '',
     phoneNo: ''

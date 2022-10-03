@@ -14,7 +14,7 @@ const homeReducer = (state=INITIAL_STATE, action) => {
             }
         case 'RESET_HOME_STATE':
             return {
-                INITIAL_STATE
+                ...INITIAL_STATE
             }
         default:
             return state;
