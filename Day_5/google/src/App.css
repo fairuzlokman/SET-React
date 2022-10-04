@@ -1,4 +1,7 @@
 /* Homepage */
+*{
+  font-family: 'Product Sans', sans-serif;
+}
 #Google{
   width: 500px;
   display: flex;
