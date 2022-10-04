@@ -6,35 +6,11 @@ import { useEffect } from 'react';
 import { padding } from '@mui/system';
 
 const UserPage = () => {
-    const { details } = useAuth();
-
-    // return (
-
-
-    // )
-
-    const { users } = useSelector(state => state.user)
-
-    const dispatch = useDispatch();
-    const setUsers = (users) => dispatch({ type: 'SET_USER_STATE', payload: {users} })
-
-    const fetchUsers = async () => {
-        const res = await getUsers();
-        // console.log(res);
-        if(res.status === 200 && res.data) {
-            setUsers(res.data)
-        }
-        console.log(users)
-    }
-
+    const { details, users } = useAuth();
     const image = users.results[0].picture.large
     const name = users.results[0].name
     const age = users.results[0].dob.age
     const email = users.results[0].email
-    const phone = users.results[0].phone
-    const gender = users.results[0].gender
-
-    useEffect(() => {fetchUsers()}, [])
 
     return (
         <>

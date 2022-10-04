@@ -2,15 +2,35 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { loginAPI } from '../../../../Day_6/dynamic-route/src/api/auth';
 import { AuthContext } from '../contexts/AuthContext';
+import { useDispatch, useSelector } from 'react-redux'
+import { getUsers } from '../api/users';
 
 export const AuthProvider = ({children}) => {
     const [token, setToken] = useState(null);
-    // const [user, setUser] = useState(null);
     const [details, setDetails] = useState({fname: "", lname: "", email: "", password: ""});
     useEffect(() => console.log(details), [details])
     
+    /**
+     * Fetch user data
+     */
+
+    const { users } = useSelector(state => state.user)
+    
+    const dispatch = useDispatch();
+    const setUsers = (users) => dispatch({ type: 'SET_USER_STATE', payload: {users} })
+
+    const fetchUsers = async () => {
+        const res = await getUsers();
+        if(res.status === 200 && res.data) {
+            setUsers(res.data)
+        }
+    }
+    useEffect(() => {fetchUsers()}, [])
+    /**
+     * Finish fetching process
+     */
+
     const navigate = useNavigate();
 
     const signup = (values) => {
@@ -27,7 +47,7 @@ export const AuthProvider = ({children}) => {
         if(values.email === details.email && values.password === details.password) {
             setToken("2340987654dxderftgyuni")
             navigate('/')
-            console.log(token);
+            console.log(token, 'hello');
         } else alert("Wrong email/password!")
     }
 
@@ -49,6 +69,7 @@ export const AuthProvider = ({children}) => {
                 login,
                 logout,
                 signup,
+                users
             }}
         >
             {children}

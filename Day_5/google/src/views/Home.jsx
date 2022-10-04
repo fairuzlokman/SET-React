@@ -6,22 +6,9 @@ import { getUsers } from '../api/users';
 import { useEffect } from 'react';
 
 export const Home = () => {
-  // const { users } = useSelector(state => state.user);
-
   const dispatch = useDispatch();
   const setUsers = (users) => dispatch({ type: 'SET_USER_STATE', payload: {users} })
 
-  const fetchUsers = async () => {
-    const res = await getUsers();
-    // console.log(res);
-    if(res.status === 200 && res.data) {
-        setUsers(res.data)
-        // console.log(users);
-    }
-  }
-      
-  useEffect(() => {fetchUsers()}, [])
-  
   return (
     <div id="Google">
           <p style={{fontSize: "100px"}}>
