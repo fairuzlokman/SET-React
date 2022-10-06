@@ -1,0 +1,43 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Fairuz",
+            "email": "fairuz@mail.com",
+            "password": "Pa$$w0rd!",
+            "role": "Developer"
+        },
+        {
+            "id": 2,
+            "name": "Amir",
+            "email": "amir@mail.com",
+            "password": "Pa$$w0rd!",
+            "role": "User"
+        },
+        {
+            "id": 3,
+            "name": "Izwan",
+            "email": "izwan@mail.com",
+            "password": "Pa$$w0rd!",
+            "role": "Support"
+        }
+    ],
+    "tickets": [
+        {
+            "id": 1,
+            "category": "Adnexio",
+            "priority": "High",
+            "status": "Complete",
+            "title": "Wifi",
+            "description": "Slow connection"
+        },
+        {
+            "id": 2,
+            "category": "Decoris",
+            "priority": "Medium",
+            "status": "In-progress",
+            "title": "Food",
+            "description": "Tak sedap"
+        }
+    ]
+}

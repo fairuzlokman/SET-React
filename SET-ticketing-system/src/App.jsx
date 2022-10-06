@@ -6,8 +6,9 @@ import Layout from './views/Layout'
 import UsersPage from './views/UsersPage'
 import TicketsPage from './views/TicketsPage'
 import UserPage from './views/UserPage'
+import TicketPage from './views/TicketPage'
 
-function App() {
+function App({data}) {
   return (
     <div className="App">
       <Routes>
@@ -17,10 +18,10 @@ function App() {
           <Route path='/signup' element={<SignUpPage />} />
 
           <Route path='/users' element={<UsersPage />} />
-          <Route path='/users/:id' element={<UserPage />} />
+          <Route data={data} path='/users/:id' element={<UserPage />} />
 
           <Route path='/tickets' element={<TicketsPage />} />
-          <Route path='/tickets/:id' element={<TicketsPage />} />
+          <Route path='/tickets/:id' element={<TicketPage />} />
         </Route>
       </Routes>
     </div>
