@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Product Sans'), url('https://fonts.cdnfonts.com/s/13998/ProductSans-Regular.woff') format('woff');
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
