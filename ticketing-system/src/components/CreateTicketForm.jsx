@@ -39,7 +39,7 @@ const CreateTicketForm = ({handleClose, refetch}) => {
 
     const createTicket = async (data) => {
         const res = await post(
-            'http://127.0.0.1:8000/api/ticket', data, {
+            'https://ticketing-fairuz-lokman.herokuapp.com/api/ticket', data, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -68,7 +68,7 @@ const CreateTicketForm = ({handleClose, refetch}) => {
     // get lookup table
     const getLookup = async () => {
         const res = await get(
-            'http://127.0.0.1:8000/api/lookup'
+            'https://ticketing-fairuz-lokman.herokuapp.com/api/lookup'
         )
         return res
     }
@@ -82,7 +82,7 @@ const CreateTicketForm = ({handleClose, refetch}) => {
     // get users
     const getUsers = async () => {
         const res = await get(
-            'http://127.0.0.1:8000/api/user', {
+            'https://ticketing-fairuz-lokman.herokuapp.com/api/user', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
