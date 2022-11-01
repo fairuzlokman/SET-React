@@ -61,6 +61,7 @@ const CreateTicketForm = ({handleClose, refetch}) => {
         onSubmit: (values) => {
             createTicket(values)
             refetch()
+            refetch()
             handleClose();
         },
     });

@@ -19,8 +19,9 @@ const DisplayTicket = ({ticket, handleClose, refetch}) => {
     
     const handleDelete = () => {
         deleteTicket(ticket.ticket_id, token)
-        handleClose()
         refetch()
+        refetch()
+        handleClose()
     }
     
     return (
