@@ -2,7 +2,7 @@ import { destroy, get, post, put } from ".";
 
 export const createTicket = async (data, token) => {
     const res = await post(
-        'http://127.0.0.1:8000/api/ticket', data, {
+        'https://ticketing-fairuz-lokman.herokuapp.com/api/ticket', data, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -13,7 +13,7 @@ export const createTicket = async (data, token) => {
 
 export const editTicket = async ( ticket_id, data, token) => {
     const res = await put(
-        `http://127.0.0.1:8000/api/ticket/${ticket_id}`, data, {
+        `https://ticketing-fairuz-lokman.herokuapp.com/api/ticket/${ticket_id}`, data, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -24,7 +24,7 @@ export const editTicket = async ( ticket_id, data, token) => {
     
 export const deleteTicket = async (ticket_id, token) => {
     await destroy(
-        `http://127.0.0.1:8000/api/ticket/${ticket_id}`, {
+        `https://ticketing-fairuz-lokman.herokuapp.com/api/ticket/${ticket_id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -34,7 +34,7 @@ export const deleteTicket = async (ticket_id, token) => {
 
 export const getTickets = async (token) => {
     const res = await get(
-        'http://127.0.0.1:8000/api/ticket', {
+        'https://ticketing-fairuz-lokman.herokuapp.com/api/ticket', {
             headers: {
                 Authorization: `Bearer ${token}`
             }

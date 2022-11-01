@@ -25,9 +25,9 @@ const Layout = () => {
               Sign up
             </CustomButton> : null}
             { token ? <CustomButton onClick={() => navigate('/user')}>
-              { thisUser.role == "Admin" ? <div className='p-1 w-[80px] rounded-full bg-gradient-to-r from-cyan-500 to-[#3752F9] text-white flex flex-row items-center'>
+              { thisUser.role == "Admin" ? <div className='p-1 sm:w-[80px] rounded-full bg-gradient-to-r from-cyan-500 to-[#3752F9] text-white flex flex-row items-center'>
                 <AccountCircleOutlinedIcon />
-                <p>Admin</p>
+                <p className='sm:block hidden'>Admin</p>
               </div>
                : <AccountCircleOutlinedIcon />}
             </CustomButton> : null}
@@ -36,7 +36,7 @@ const Layout = () => {
             </CustomButton> : null}
           </div>
         </Paper>
-        <div className='w-full h-full flex flex-row justify-between items-center'>
+        <div className='w-full h-full flex flex-col sm:flex-row justify-between items-center'>
           { !token ? null : <Navigation />}
           <div className='w-full h-full flex justify-center items-center'>
             <Outlet />

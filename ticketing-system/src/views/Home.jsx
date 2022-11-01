@@ -7,10 +7,10 @@ const Home = () => {
   // useEffect(() => fetchUsers(), [])
   
   return (
-    <div className="h-[200px] flex flex-row">
+    <div className="h-[200px] flex flex-col sm:flex-row">
       <p className="text-[50px]">The</p>
       <div className="flex flex-row items-end">
-        <p className="text-[100px] text-center">Ticketing App</p>
+        <p className="text-[70px] sm:text-[100px] text-center">Ticketing App</p>
       </div>
     </div>
   )

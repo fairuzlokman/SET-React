@@ -7,7 +7,7 @@ const UserList = () => {
   
   return (
     <div className='w-full h-full'>
-        <p className='text-[70px] px-10'>Users</p>
+        <p className='text-[40px] sm:text-[70px] px-10'>Users</p>
         <Paper elevation={5} className='w-full h-10 flex flex-row gap-5 items-center mb-1 px-5'>
           <div className='w-[40px]'>No.</div>
           <div className='w-1/3 text-center'>Name</div>

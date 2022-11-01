@@ -14,7 +14,7 @@ const TicketList = () => {
   
   const fetchTickets = async () => {
     const res = await get(
-      'http://127.0.0.1:8000/api/ticket', {
+      'https://ticketing-fairuz-lokman.herokuapp.com/api/ticket', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -53,7 +53,7 @@ const TicketList = () => {
   
   return (
     <div className='w-full h-full relative'>
-        <p className='text-[70px] px-10'>Tickets</p>
+        <p className='text-[40px] sm:text-[70px] px-10'>Tickets</p>
         <Paper elevation={5} className='w-full h-10 flex flex-row gap-5 items-center mb-1 px-5'>
           <div className='w-16'>No.</div>
           <div className='w-24'>Ticket ID</div>
@@ -77,9 +77,9 @@ const TicketList = () => {
                   }
                   {/* Change color based on div */}
                   {
-                    ticket.status == "Complete" ? <div className='w-1/5 text-center bg-green-500 text-white rounded-full'>{ticket.status}</div>
-                    : ticket.status == "In-progress" ? <div className='w-1/5 text-center bg-yellow-500 text-white rounded-full'>{ticket.status}</div>
-                    : <div className='w-1/5 text-center bg-red-600 text-white rounded-full'>{ticket.status}</div>
+                    ticket.status == "Complete" ? <div className='w-1/5 h-[25px] text-center bg-green-500 text-white rounded-full'><p className='sm:block hidden'>{ticket.status}</p></div>
+                    : ticket.status == "In-progress" ? <div className='w-1/5 h-[25px] text-center bg-yellow-500 text-white rounded-full'><p className='sm:block hidden'>{ticket.status}</p></div>
+                    : <div className='w-1/5 h-[25px] text-center bg-red-600 text-white rounded-full'><p className='sm:block hidden'>{ticket.status}</p></div>
                   }
                 </button>
               </div>
@@ -93,7 +93,7 @@ const TicketList = () => {
             <h1>{ticket.title}</h1>
             <h1>Ticket ID: {ticket.ticket_id}</h1>
           </DialogTitle>
-          <DialogContent className='w-[600px]'>
+          <DialogContent className='w-[500px] sm:w-[600px]'>
             <DisplayTicket refetch={refetch} handleClose={handleCloseDisplay} ticket={ticket} />
           </DialogContent>
         </Dialog>
@@ -107,7 +107,7 @@ const TicketList = () => {
             <CreateTicketForm refetch={refetch} handleClose={handleCloseCreateNew} />
           </DialogContent>
         </Dialog>
-        {thisUser.role == "Admin" ? <button className='fixed right-5 bottom-5 rounded-full hover:scale-105' onClick={handleClickCreateNew}><AddCircleIcon sx={{width: 50, height: 50, color: "#3752F9"}} /></button> : null }
+        {thisUser.role == "Admin" ? <button className='fixed right-5 bottom-5 rounded-full hover:scale-105' onClick={handleClickCreateNew}><AddCircleIcon sx={{width: 50, height: 50, color: "#1976D2"}} /></button> : null }
     </div>
   )
 }

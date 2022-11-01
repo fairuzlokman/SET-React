@@ -12,7 +12,7 @@ export const Navigation = () => {
     })
 
     return (
-            <div className="w-[150px] h-full flex flex-col justify-evenly items-center bg-black text-[silver] shadow-xl">
+            <div className="w-full sm:w-[150px] h-[100px] sm:h-full flex flex-row sm:flex-col justify-evenly items-center bg-black text-[silver] shadow-xl">
                 { role == "Admin" ? <NavLink style={style} to={'/userlist'}>Users</NavLink> : null}
                 <NavLink style={style} to={'/ticketlist'}>Tickets</NavLink>
             </div>

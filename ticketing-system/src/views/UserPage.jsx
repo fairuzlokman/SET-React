@@ -17,13 +17,13 @@ const UserPage = () => {
 
     return (
         <div className='w-full h-full flex flex-col items-center'>
-            <h1 className='text-8xl p-10'>
+            <h1 className='text-4xl sm:text-8xl p-5'>
                 Hello,&nbsp;
                 <span style={{color: "#1976d2"}}>
                     {thisUser.name}
                 </span>!
             </h1>
-            <div className='w-full px-40 flex flex-col gap-5'>
+            <div className='w-full px-10 sm:px-40 flex flex-col gap-5'>
                 <h3 className='w-full'>Name</h3>
                 <div className='p-2 shadow-[inset_0_-2px_4px_rgba(0,0,0,0.3)] rounded-md'>
                     <h1 className='w-full text-xl font-normal'>{thisUser.name}</h1>
