@@ -59,7 +59,7 @@ const CreateTicketForm = ({handleClose, refetch}) => {
         },
         validationSchema: validationSchema,
         onSubmit: (values) => {
-            createTicket(values, token)
+            createTicket(values)
             refetch()
             handleClose();
         },
