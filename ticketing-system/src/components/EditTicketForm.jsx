@@ -50,7 +50,7 @@ const EditTicketForm = ({handleClose, ticket, refetch}) => {
         onSubmit: (values) => {
             editTicket(ticket.ticket_id, values, token)
             refetch()
-            // refetch()
+            refetch()
             handleClose();
         },
     });
