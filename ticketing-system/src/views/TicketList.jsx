@@ -13,15 +13,16 @@ const TicketList = () => {
   const [ticket, setTicket] = useState([])
   
   const fetchTickets = async () => {
-    const res = await get(
+    const res = await get (
       'https://ticketing-fairuz-lokman.herokuapp.com/api/ticket', {
         headers: {
           Authorization: `Bearer ${token}`
         }
       }
-      )
-      return res;
-    }
+    )
+    return res;
+  }
+
   const { refetch } = useQuery(["ticket"], fetchTickets,{
     enabled: false,
     onSuccess: (res) => {
