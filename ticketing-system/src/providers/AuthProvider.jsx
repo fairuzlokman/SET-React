@@ -32,7 +32,7 @@ export const AuthProvider = ({children}) => {
         const { data } = await loginUser(test);
         
         if(data?.data?.token){
-            console.log(data);
+            // console.log(data);
             setToken(data?.data?.token)
             setRole(data?.data?.user?.role)
             setThisUser(data?.data?.user)
@@ -43,11 +43,11 @@ export const AuthProvider = ({children}) => {
             const { data:ticketData } = await getTickets(data?.data?.token)
             setTickets(ticketData?.data)
             
-            if(role == "Admin"){
+            if(data?.data?.user?.role == "Admin"){
                 const { data:userData } = await getUsers(data?.data?.token)
                 setUsers(userData?.allUsers)
-            } else console.log("hello");
-
+            } else null
+            
         } else setLoginError(true)
     }
 
