@@ -17,7 +17,7 @@ const UserPage = () => {
 
     return (
         <div className='w-full h-full flex flex-col items-center'>
-            <h1 className='text-4xl sm:text-8xl p-5'>
+            <h1 className='text-4xl sm:text-5xl p-5'>
                 Hello,&nbsp;
                 <span style={{color: "#1976d2"}}>
                     {thisUser.name}
