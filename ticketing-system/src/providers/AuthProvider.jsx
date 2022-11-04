@@ -40,11 +40,13 @@ export const AuthProvider = ({children}) => {
             setLoginError(false)
             alert(data?.message)
             
+            if(role == "Admin"){
+                const { data:userData } = await getUsers(data?.data?.token)
+                setUsers(userData?.allUsers)
+            }
+            
             const { data:ticketData } = await getTickets(data?.data?.token)
             setTickets(ticketData?.data)
-            
-            const { data:userData } = await getUsers(data?.data?.token)
-            setUsers(userData?.allUsers)
 
         } else setLoginError(true)
     }
